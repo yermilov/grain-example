@@ -72,9 +72,9 @@ deploy = github_pages_deploy_cmd
  */
 
 // General settings.
-title = 'Octopress theme for Grain' // blog name for the header, title and RSS feed
-subtitle = 'Grain is a static web site building framework for Groovy' // blog brief description for the header
-author = 'SysGears'                 // author name for Copyright, Metadata and RSS feed
+title = 'Your blog title'
+subtitle = 'Your blog subtitle'
+author = 'me'
 meta_description = ''               // blog description for Metadata
 
 // Blog and Archive.
@@ -157,7 +157,7 @@ asides {
 
     // GitHub repositories.
     github {
-        user = 'sysgears'           // GitHub (https://github.com/) username
+        user = 'yermilov'           // GitHub (https://github.com/) username
         show_profile_link = true    // whether to show link to GitHub profile
         skip_forks = true
         count = 10                  // the number of repositories to show
@@ -165,7 +165,7 @@ asides {
 
     // The latest tweets.
     tweets {
-        user = 'sysgears'           // Twitter (https://twitter.com/) username
+        user = 'yermilov17'           // Twitter (https://twitter.com/) username
         count = 2                   // the number of tweets to display
         //consumer_key = ''         // to get consumer key and secret go to https://dev.twitter.com/apps and create a new application
         //consumer_secret = ''
@@ -184,10 +184,10 @@ asides {
         user = '109746189379932479469' // Google plus (https://plus.google.com/) user id
     }
     twitter {
-        user = 'sysgears'           // Twitter (https://twitter.com/) username
+        user = 'yermilov17'           // Twitter (https://twitter.com/) username
     }
     facebook {
-        user = 'sysgears'           // Facebook (https://www.facebook.com/) username
+        user = 'yaroslav.yermilov'           // Facebook (https://www.facebook.com/) username
     }
     instagram {
         user = ''                   // Instagram (http://instagram.com/) username

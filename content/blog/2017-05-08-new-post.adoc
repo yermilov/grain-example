@@ -1,0 +1,9 @@
+---
+layout: post
+title: "Post title goes here"
+date: "2017-05-08 02:30"
+categories: [tags]
+published: true
+---
+
+Post content goes here.
