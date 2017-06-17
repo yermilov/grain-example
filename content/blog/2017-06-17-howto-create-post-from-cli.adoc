@@ -1,0 +1,17 @@
+---
+layout: post
+title: "HOWTO: create post from CLI"
+date: "2017-06-17 13:24"
+updated: "2017-06-17 13:24"
+categories: []
+comments: true
+published: false
+sharing: true
+---
+:linkattrs:
+
+HOWTO: create post from CLI
+
+++++
+<!--more-->
+++++

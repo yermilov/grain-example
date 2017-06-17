@@ -197,39 +197,37 @@ asides {
     about_author = 'A brief description of blog owner.'
 }
 
-commands = [
-'create-post': { String postTitle ->
+def createPost = { String postTitle ->
     def date = new Date()
-    def fileDate = date.format("yyyy-MM-dd")
-    def filename = fileDate + "-" + postTitle.encodeAsSlug() + ".markdown"
-    def blogDir = new File(content_dir + "/blog/")
+    def fileDate = date.format('yyyy-MM-dd')
+    def filename = fileDate + '-' + postTitle.encodeAsSlug() + '.adoc'
+    def blogDir = new File("${content_dir}/blog/")
     if (!blogDir.exists()) {
         blogDir.mkdirs()
     }
     def file = new File(blogDir, filename)
 
-    file.exists() || file.write("""---
-layout: post
-title: "${postTitle}"
-date: "${date.format(datetime_format)}"
-author:
-categories: []
-comments: true
-published: false
----
-""")},
-'create-page': { String location, String pageTitle ->
-        def ext = new File(location).extension
-        def file
-        if (!ext) {
-            file = new File(content_dir + location, 'index.markdown')
-        } else {
-            file = new File(content_dir, location)
-        }
-        file.parentFile.mkdirs()
-        file.exists() || file.write("""---
-layout: page
-title: "${pageTitle}"
-navigate: true
----
-""")}]
+    file.exists() || file.write("""
+      ---
+      layout: post
+      title: "${postTitle}"
+      date: "${date.format(datetime_format)}"
+      updated: "${date.format(datetime_format)}"
+      categories: []
+      comments: true
+      published: false
+      sharing: true
+      ---
+      :linkattrs:
+
+
+      ++++
+      <!--more-->
+      ++++
+      """.readLines().collect({ it.trim() }).dropWhile({ it.length() == 0 }).join('\n')
+    )
+}
+
+commands = [
+'create-post': createPost
+]
