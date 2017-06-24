@@ -14,6 +14,12 @@ class OctopressTagLib {
         this.taglib = taglib
     }
 
+    def dateMessage = { Map attrs ->
+        if (!attrs.text) throw new IllegalArgumentException('Tag [dateMessage] is missing required attribute [text]')
+
+        taglib.include('/tags/dateMessage.html', [text: attrs.text])
+    }
+
     /**
      * Renders a quote block which contains the quote text, author and source.
      *

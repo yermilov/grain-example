@@ -1,0 +1,31 @@
+sudo: required
+
+language: java
+
+before_cache:
+- rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+- rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
+cache:
+  directories:
+  - "$HOME/.gradle/caches/"
+  - "$HOME/.gradle/wrapper/"
+  - "$HOME/.grain/packages/"
+  - "$HOME/.grain/tools/"
+
+before_install:
+- chmod +x gradlew
+- chmod +x grainw
+
+install:
+- "./grainw generate"
+
+before_script:
+- eval "$(ssh-agent -s)"
+- chmod 600 .travis/id_rsa
+- ssh-add .travis/id_rsa
+- git config --global user.email "yermilov17@gmail.com"
+- git config --global user.name "Travis-CI"
+
+script:
+- "./grainw deploy"

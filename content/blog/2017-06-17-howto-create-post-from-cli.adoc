@@ -15,3 +15,7 @@ HOWTO: create post from CLI
 ++++
 <!--more-->
 ++++
+
+++++
+${ dateMessage text:'Hello from ' }
+++++
