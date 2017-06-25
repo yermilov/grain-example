@@ -14,10 +14,10 @@ class OctopressTagLib {
         this.taglib = taglib
     }
 
-    def dateMessage = { Map attrs ->
-        if (!attrs.text) throw new IllegalArgumentException('Tag [dateMessage] is missing required attribute [text]')
+    def dateNow = { Map attrs ->
+        if (!attrs.sel) throw new IllegalArgumentException('Tag [dateNow] is missing required attribute [sel]')
 
-        taglib.include('/tags/dateMessage.html', [text: attrs.text])
+        taglib.include('/tags/dateNow.html', [sel: attrs.sel])
     }
 
     /**

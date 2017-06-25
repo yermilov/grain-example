@@ -16,6 +16,8 @@ HOWTO: create post from CLI
 <!--more-->
 ++++
 
++++<p><span>Hello from </span><span id="todayPlaceholder"></span></p>+++
+
 ++++
-${ dateMessage text:'Hello from ' }
+${ dateNow sel:'todayPlaceholder' }
 ++++
